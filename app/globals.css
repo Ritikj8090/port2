@@ -1,0 +1,533 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  scroll-behavior: smooth;
+  cursor: none;
+  
+}
+
+body{
+  background-color: rgb(25, 25, 29);
+  font-family: 'Roboto', sans-serif;
+  color: white;
+
+}
+
+.pri-col {
+  color: #5918df;
+}
+
+.active {
+  color: white;
+}
+
+.deactivate {
+  color: #858282;
+}
+
+.scroll {
+  color: #5918df;
+  font-size: 14px;
+  position: absolute;
+  text-shadow: 0 3px 14px #181619, 0 -3px 14px #181619, 3px 0 14px #181619, -3px 0 14px #181619, 0 3px 6px #181619, 0 -3px 6px #181619, 3px 0 6px #181619, -3px 0 6px #181619;
+  transform: translate(-15px,35px) rotate(-90deg);
+  z-index: 9;
+}
+
+.circle{
+  border-color: #5918df;
+  position: absolute;
+  text-shadow: 0 3px 14px #181619, 0 -3px 14px #181619, 3px 0 14px #181619, -3px 0 14px #181619, 0 3px 6px #181619, 0 -3px 6px #181619, 3px 0 6px #181619, -3px 0 6px #181619;
+  z-index: 9;
+  box-shadow: inset 0 3px 14px #181619, 0 -3px 14px #181619, 3px 0 14px #181619, -3px 0 14px #181619, 0 3px 6px #181619, 0 -3px 6px #181619, 3px 0 6px #181619, -3px 0 6px #181619;
+}
+
+
+.gradient{
+  background-image:
+			linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+      
+}
+
+.btn {
+  background: linear-gradient(45deg, #7462ff 0%, rgb(68, 0, 225) 100%);
+  position: relative;
+}
+
+.btn:hover{
+  background: linear-gradient(90deg, #7462ff, #4400e1, #0069e1, #55a9e0, #d2001a,  #f48e21, #23d5ab);
+  animation: color 5s ease-in-out infinite;
+  background-size: 500% 500%;
+}
+
+
+.btn:hover::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: calc(100% + 4px);
+  height: calc(100% + 2px);
+  background: linear-gradient(90deg, #7462ff, #4400e1, #0069e1, #55a9e0, #d2001a,  #f48e21, #23d5ab);
+  animation: color 5s ease-in-out infinite;
+  background-size: 500% ;
+  filter: blur(20px);
+  
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+@keyframes color{
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
+}
+
+.grid{
+  background: linear-gradient(to bottom, #151325, #161435, #0e0922, #130b36, #0f0527,  #071a44, #023361);
+  background-size: 100% 1000%;
+  animation: fade 10s linear infinite alternate;
+  gap: 7px;
+  overflow: hidden;
+  position: relative;
+}
+
+.row{
+  display: flex;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.col{
+  height: 70px;
+  width: 70px;
+  background-color: rgb(24, 23, 23);
+  transition: background-color 0.1s ;
+  min-width: 70px;
+  display: inline-block;
+  
+}
+
+.col:hover{
+  background-color: rgb(74, 12, 219);
+}
+
+.col:not(:hover) {
+  transition: background-color 2s;
+}
+
+
+@keyframes fade {
+  0% {
+      background-position: 0% 0;
+  }
+  100% {
+      background-position: 0% 100%;
+  }
+}
+
+#work1:before {
+  color: #221d35;
+  content: "WEB";
+  font-family: Roboto Mono,Courier New,Courier,monospace!important;
+  font-size: 270px;
+  font-weight: 700;
+  position: absolute;
+  right: -0px;
+  top: -0px;
+  width: fit-content;
+  height: fit-content;
+}
+
+#lab1:before {
+  color: #221d35;
+  content: "LAB";
+  font-family: Roboto Mono,Courier New,Courier,monospace!important;
+  font-size: 270px;
+  font-weight: 700;
+  position: absolute;
+  right: -0px;
+  top: -0px;
+}
+
+#about1:before {
+  color: #221d35;
+  content: "ABOUT";
+  font-family: Roboto Mono,Courier New,Courier,monospace!important;
+  font-size: 270px;
+  font-weight: 700;
+  position: absolute;
+  right: -0px;
+  top: -0px;
+}
+
+.cursor-border {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  border: 2px solid hsla(0, 0%, 100%, 0.5);
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  
+}
+
+.cursor-point {
+  z-index: 1;
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+
+.input-container{
+	position:relative;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:20px;
+	color:#858282;	
+	transition: all 0.1s ease-in-out;
+  cursor: none;
+  
+}
+
+
+.input-container input{ 
+  
+   
+  background:transparent;
+  width:100%;
+  margin-left: 4px;
+  font-size:20px;
+  color:#fff;
+  cursor: none;
+  
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:2px solid #3819eb;	
+}
+.input-container input:focus ~ label{
+	top:-27px;
+	font-size:12px;
+	
+}
+
+.pictureContainer {
+  
+  overflow: hidden;
+
+  -webkit-transition: all .5s ease-in-out;
+          -moz-transition: all .5s ease-in-out;
+          -o-transition: all .5s ease-in-out;
+           transition: all .5s ease-in-out;
+}
+
+.pictureContainer:hover{
+  width: 100%;
+  transition: transform .2s ease-in-out;
+  
+}
+
+.cursor{
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+
+.wrapper {
+  width: 65vmin;
+  height: 70vmin;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  background: #293447;
+  box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
+}
+.game-details {
+  color: #B8C6DC;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+}
+.play-board {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background: #212837;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+.play-board .food {
+  background: #FF003D;
+}
+.play-board .head {
+  background: #60CBFF;
+}
+
+.controls {
+  display: none;
+  justify-content: space-between;
+}
+.controls i {
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #B8C6DC;
+  width: calc(100% / 4);
+  cursor: pointer;
+  border-right: 1px solid #171B26;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    width: 90vmin;
+    height: 115vmin;
+  }
+  .game-details {
+    font-size: 1rem;
+    padding: 15px 27px;
+  }
+  .controls {
+    display: flex;
+  }
+  .controls i {
+    padding: 15px 0;
+    font-size: 1rem;
+  }
+}
+
+.deactivate1{
+  color: black;
+}
+
+.tic-tac-toe {
+  width: fit-content;
+  margin: 40px auto;
+  text-align: center;
+}
+.tic-tac-toe h1 {
+  color: #eee;
+}
+
+.tic-tac-toe button {
+  padding: 8px 12px;
+  margin: 25px;
+  background: transparent;
+  border: 2px solid #eee;
+  color: #eee;
+  width: 100px;
+  border-radius: 5px;
+  transition: 0.2s;
+  font-weight: bold;
+}
+
+.tic-tac-toe button:hover {
+  background: #eee;
+  color: #222;
+}
+.tic-tac-toe .game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.turn {
+  display: flex;
+  justify-content: center;
+  margin: 15px auto;
+  width: fit-content;
+  position: relative;
+  border-radius: 10px;
+}
+
+.turn .square,
+.winner .square {
+  width: 70px;
+  height: 70px;
+  pointer-events: none;
+  border-color: transparent;
+}
+
+.turn .square span.x::before,
+.turn .square span.x::after {
+  background: #222;
+  transition: 0.2s;
+}
+
+.turn .square span.o {
+  transition: 0.2s;
+  border-color: #222;
+}
+
+.turn::after {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 100%;
+  top: 0;
+  background: #49ff58;
+  border-radius: 9px;
+  z-index: -1;
+  transition: 0.2s;
+}
+
+.turn.left::after {
+  left: 0;
+}
+
+.turn.left span.o {
+  border-color: #eee;
+}
+.turn.right span.x::before,
+.turn.right span.x::after {
+  background: #eee;
+}
+.turn.right::after {
+  left: 50%;
+}
+
+.winner {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.winner .text {
+  background: #111;
+  width: 70%;
+  max-width: 400px;
+  height: 300px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.winner .text h2 {
+  font-size: 2.5em;
+  margin: 15px 0;
+  color: #eee;
+}
+
+.winner .win {
+  margin: 0 auto;
+  width: fit-content;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+/*background*/
+
+.container{
+  border: 2px solid;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 3px; /* Gap between grid items (adjust as needed) */
+         
+}
+
+.item{
+  background-color: rgb(24, 23, 23);
+  
+  transition: background-color 0.1s ;
+}
+
+.item:hover{
+  background-color: rgb(64, 153, 61);
+}
+
+.item:not(:hover) {
+  transition: background-color 2s;
+}
+
+@keyframes fade {
+          0% {
+              background-position: 0% 0;
+          }
+          100% {
+              background-position: 0% 100%;
+          }
+      }
+
+.main{
+
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(1, 50, 32), rgb(0, 0, 0));
+  background-size: 100% 1000%;
+  animation: fade 10s linear infinite alternate;
+  gap: 3px;
+}
+
+
+/*scroll bar*/
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #2c2a2a;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #020202;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(79, 78, 97)),
+									   color-stop(0.72, rgb(77, 79, 112)),
+									   color-stop(0.86, rgb(89, 83, 116)));
+}
+
+
+

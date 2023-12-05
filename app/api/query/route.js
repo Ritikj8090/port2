@@ -1,3 +1,4 @@
+
 import connectToDb from "@/lib/connectToDb";
 import Email  from "@/model/email";
 import { NextResponse } from "next/server";

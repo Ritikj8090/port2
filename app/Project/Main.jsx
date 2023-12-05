@@ -53,7 +53,7 @@ const Main = () => {
     const fetchSingleProject = async () => {
       setTimeout(async () => {
         const project = await axios.get(
-          `http://localhost:3000/project/${store.ProjectId}`
+          `https://portfolio-v2-production-30b2.up.railway.app/project/${store.ProjectId}`
         );
         setData(project.data.project)
           setImages(project.data.project.image)
@@ -83,7 +83,7 @@ const Main = () => {
             {
             
               images.length === 0 ? <div className="flex mx-auto w-full h-full items-center justify-center"><Image src={loading} height={60} width={60}/></div> : images.map((img) => {
-                return <Image key={Data.number} alt="iamge" src={`http://localhost:3000/${Data.number}/${img}`} />
+                return <Image key={Data.number} alt="iamge" src={`http://localhost:3000/${Data.number}/${img}`}/>
               })
           }
           

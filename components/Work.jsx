@@ -19,14 +19,16 @@ const Work = ({dot, border}) => {
   const route = useRouter()
   const store = Store()
   const [Projects, setProjects] = useState({})
+  const [images, setImages] = useState({})
   useEffect(() => {
     const fetchProject = async () => {
-      const res = await axios.get('http://localhost:3000/project');
+      const res = await axios.get('https://portfolio-v2-production-30b2.up.railway.app/project');
       setProjects(res.data.project)
+      
     }
     fetchProject()
   },[])
-  //console.log(Projects)
+  
   return (
     <section id="work" className="h-full ">
         <div id="work1" className="relative"></div>
@@ -63,9 +65,11 @@ const Work = ({dot, border}) => {
                   
                 >
                   <Image
-                    src={`http://localhost:3000/${pro.mainImage}`}
-                    alt="a"
+                    src={`https://portfolio-v2-production-30b2.up.railway.app/${pro.mainImage}`}
+                    alt={pro.mainImage}
                     className="h-[220px] w-[500px] "
+                    width={500}
+                    height={220}
                     
                   />
                   <div className=" absolute bottom-5 -ml-5 ">

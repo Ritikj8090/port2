@@ -29,7 +29,7 @@ const Lab = () => {
               Analog Clock
             </div>
             <div className="cardhover absolute ml-20">
-              <Image src={movix} />
+              <Image src={movix} alt="w" />
             </div>
           </div>
           

@@ -66,7 +66,7 @@ const Main = () => {
       setCalled(false)
       fetchSingleProject();
     }
-  });
+  },[called]);
   
   return (
     <>
@@ -87,8 +87,8 @@ const Main = () => {
           <div className='overflow-scroll w-full'>
             {
             
-              images.length === 0 ? <div className="flex mx-auto w-full h-full items-center justify-center"><Image src={loading} height={60} width={60}/></div> : images.map((img) => {
-                return <img key={Math.random()} alt="iamge" src={`/image/${Data.number}/${img}`}/>
+              images.length === 0 ? <div className="flex mx-auto w-full h-full items-center justify-center"><Image src={loading} alt="loading" height={60} width={60}/></div> : images.map((img) => {
+                return <Image key={Math.random()} alt={img} src={`/image/${Data.number}/${img}`} width={1500} height={1000} />
               })
           }
           

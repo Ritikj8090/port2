@@ -8,7 +8,7 @@ const About = ({dot, border}) => {
     day: Math.abs(date.getDate() - 18),
     month: Math.abs((date.getMonth() - 8 + 13)%12),
     year: Math.abs(date.getFullYear() - 2000),
-    hour: date.getHours(),
+    hour: date.getHours(), 
     minute: date.getMinutes(),
     second: date.getSeconds(),
   }

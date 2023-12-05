@@ -5,7 +5,7 @@ const Store = create((set) => ({
   FetchProjectId: async (id) => {
     set({ProjectId: id})
     //console.log(id)
-  }
+  },
 }))
 
 export default Store

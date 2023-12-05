@@ -6,7 +6,7 @@ import AnimatedTextCharacter from './AnimatedTextCharacter';
 import Msg from './Msg';
 import Background from './Background';
 
-const Start = ({dot, border}) => {
+const Start = ({dot, border, Visiter}) => {
   const [heights, setheights] = useState(10);
   const [show, setShow] = useState(false)
   const borderRef = useRef(null);
@@ -50,6 +50,7 @@ const Start = ({dot, border}) => {
       <div className=' flex  ease-in-out duration-1000'>
       <div className={`w-[11px] h-[11px] border-[#5918df] absolute border-[2px] solid rounded-full -m-[5px] -my-[9px]`}></div>
       <div ref={borderRef} className={`bg-[#5918df]  w-[1px] absolute z-9 `}>
+        
         <a
           href="#work"
           className="-rotate-90 scroll -mx-3 cursor-none  font-bold text-xl sm:my-72 my-52"
@@ -97,6 +98,7 @@ const Start = ({dot, border}) => {
           </div>
           <div className="mt-8 deactivate font-mono text-xl">
             <AnimatedTextCharacter text={"Let me show You..."} delay={4} />
+            <div className='border-[1px] rounded-2xl w-fit h-fit p-2 mt-2'>Visiter Count = {Visiter}</div>
           </div>
         </div>
       </div>

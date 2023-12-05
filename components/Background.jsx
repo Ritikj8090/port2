@@ -1,9 +1,7 @@
 import React from "react";
 
 const Background = () => {
-  const makeArrary = () => {
-    return 
-  };
+
   return <div className="grid">
     {Array.from({ length:80 }, (_, row) => (
       <div key={row} className="row">

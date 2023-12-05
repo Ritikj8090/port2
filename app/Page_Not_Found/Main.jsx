@@ -50,7 +50,7 @@ const Main = () => {
       </div>
       <div className="h-screen flex w-full relative">
         <div className="flex flex-col bg-[#111a41fd] items-center justify-center w-full ">
-          <Image src={PageNotFound} alt="page not found" className="" height={600} width={600}/>
+          <img src={PageNotFound} alt="page not found" className="h-[600px] w-[600px]"/>
           <motion.button
             onMouseEnter={() => {
               mdot.pooint.style = `width:50px; height:50px; border: 3px solid; transition: ease-in-out .2s; mix-blend-mode: difference;`;

@@ -36,6 +36,7 @@ const About = ({dot, border}) => {
               About/&gt;
             </motion.div>
           </div>
+        
         </div>
         <div className="ease-in-out duration-1000 lg:left-[205px] left-[60px] relative -ml-7 mt-7 font-mono text-lg deactivate font-semibold mr-16 lg:mr-52">
         <div>

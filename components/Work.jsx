@@ -19,11 +19,10 @@ const Work = ({dot, border}) => {
   const route = useRouter()
   const store = Store()
   const [Projects, setProjects] = useState({})
-  const [images, setImages] = useState({})
   useEffect(() => {
     const fetchProject = async () => {
-      const res = await axios.get('https://portfolio-v2-production-30b2.up.railway.app/project');
-      setProjects(res.data.project)
+      const res = await axios.get('http://localhost:3000/api/project');
+      setProjects(res.data.res)
       
     }
     fetchProject()
@@ -43,6 +42,7 @@ const Work = ({dot, border}) => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ type: "spring", delay: 0.2 }}
             >
+              
               Work/&gt;
             </motion.div>
           </div>
@@ -64,8 +64,8 @@ const Work = ({dot, border}) => {
                   onClick={async () => {await store.FetchProjectId(pro._id); route.push('/Project')}}
                   
                 >
-                  <Image
-                    src={`https://portfolio-v2-production-30b2.up.railway.app/${pro.mainImage}`}
+                  <img
+                    src={`/image/${pro.mainImage}`}
                     alt={pro.mainImage}
                     className="h-[220px] w-[500px] "
                     width={500}

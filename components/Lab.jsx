@@ -1,5 +1,7 @@
-import React from 'react'
-import {motion} from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import movix from "../public/movix/movix1.jpeg";
 
 const Lab = () => {
   return (
@@ -20,14 +22,21 @@ const Lab = () => {
             </motion.div>
           </div>
         </div>
-        <div className="ease-in-out duration-1000 lg:left-[205px] left-[60px] relative mt-7 font-mono text-lg deactivate font-semibold mr-16 lg:mr-5 ml-7 h-full">
-            <div className='h-full w-full flex items-center justify-center mt-[400px] mb-[400px] text-5xl font-mono '>
-            Coming Soon...
+        <div className="justify-between gap-7 flex flex-wrap h-screen ease-in-out duration-1000 lg:left-[205px] left-[60px] relative mt-7 font-mono text-lg deactivate font-semibold mr-20 lg:mr-5 ml-7 ">
+          
+          <div className="relative">
+            <div className="border-2 h-[50px] mb-5 w-[150px] p-2 rounded-2xl card">
+              Analog Clock
             </div>
+            <div className="cardhover absolute ml-20">
+              <Image src={movix} />
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Lab  
+export default Lab;

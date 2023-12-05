@@ -110,11 +110,10 @@ body{
 .col{
   height: 70px;
   width: 70px;
-  background-color: rgb(24, 23, 23);
+  background-color: rgb(36, 31, 31);
   transition: background-color 0.1s ;
   min-width: 70px;
   display: inline-block;
-  
 }
 
 .col:hover{
@@ -530,4 +529,29 @@ body{
 }
 
 
+/*card*/
+.card + div{
+  display: none;
+  height: 200px;
+  width: 400px;
+  position: absolute;
+  left: 50px;
+}
+
+.card:hover + div{
+    display: inline;
+    animation: slide 0.2s ease-in-out ;
+    object-fit: fill;
+    overflow: hidden;
+}
+
+@keyframes slide {
+  0%{
+    width: 0px;
+  }
+  100%{
+    width: 400px;
+  }
+
+}
 

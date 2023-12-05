@@ -70,7 +70,7 @@ const MainPart = () => {
       setErrorForm({...ErrorForm ,email:false})
     } else {
       try {
-        const res = await axios.post('https://portfolio-v2-production-30b2.up.railway.app/query', formData)
+        const res = await axios.post('http://localhost:3000/api/query', formData)
       //console.log(res.status);
       route.push("/thank");
       } catch (error) {

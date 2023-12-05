@@ -14,6 +14,7 @@ const Main = () => {
   const route = useRouter()
   const store = Store();
   const [Data, setData] = useState({});
+  const [images, setImages] = useState([])
 
   const dotRef = useRef(null);
   const borderRef = useRef(null);
@@ -48,21 +49,25 @@ const Main = () => {
       );
     });
   }, []);
-  const [images, setImages] = useState([])
-  useEffect(() => {
-    const fetchSingleProject = async () => {
-      setTimeout(async () => {
-        const project = await axios.get(
-          `https://portfolio-v2-production-30b2.up.railway.app/project/${store.ProjectId}`
-        );
-        setData(project.data.project)
-          setImages(project.data.project.image)
-      }, 1000);
-      
-    };
-    fetchSingleProject();
-  }, [Data]);
-  console.log(images);
+  
+  const fetchSingleProject = async () => {
+    setTimeout(async () => {
+      const project = await axios.get(
+        `http://localhost:3000/api/project/${store.ProjectId}`
+      );
+      setData(project.data.res)
+        setImages(project.data.res.image)
+    }, 1000);
+    
+  };
+  const [called, setCalled] = useState(true)
+  useEffect(() => { 
+    if(called){
+      setCalled(false)
+      fetchSingleProject();
+    }
+  });
+  
   return (
     <>
       <div>
@@ -83,7 +88,7 @@ const Main = () => {
             {
             
               images.length === 0 ? <div className="flex mx-auto w-full h-full items-center justify-center"><Image src={loading} height={60} width={60}/></div> : images.map((img) => {
-                return <Image key={Data.number} alt="iamge" src={`http://localhost:3000/${Data.number}/${img}`}/>
+                return <img key={Math.random()} alt="iamge" src={`/image/${Data.number}/${img}`}/>
               })
           }
           
